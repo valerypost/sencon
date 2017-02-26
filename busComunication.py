@@ -45,4 +45,4 @@ def getPower():
 
 
 def setPower(time):
-    writePort4(7, 1, time, 1)
+    writeBlock([7, 1, time, 1])

@@ -15,7 +15,7 @@ def add_message():
     content = request.get_json(silent=True)
     print content
     print content['offTimer']
-    comm.setPower(content['offTimer'])
+    comm.setPower(int(content['offTimer']))
 
     return jsonify({"uuid": 33})
 
