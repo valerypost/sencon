@@ -1,13 +1,13 @@
 from flask import Flask
 from flask import Flask, flash, redirect, render_template, request, session, abort,jsonify
 import os
-import busComunicationFake
+import busComunicationFake as comm
  
 app = Flask(__name__)
 
 @app.route('/test')
 def test():
-    return render_template('portal.html',power=busComunicationFake.getPower())
+    return render_template('portal.html',power=comm.getPower())
 
 @app.route('/data', methods=['GET', 'POST'])
 def add_message():
@@ -15,7 +15,7 @@ def add_message():
     content = request.get_json(silent=True)
     print content
     print content['offTimer']
-    busComunicationFake.getPower()
+    comm.setPower(content['offTimer'])
 
     return jsonify({"uuid": 33})
 

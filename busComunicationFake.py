@@ -29,13 +29,6 @@ def writePort(port,delay):
     writeBlock(port, 1, delay,1)
 
 
-
-def write(port,command):
-    value=decoder.decode(port,command)
-    writeNumber(value)
-    print "write value",value
-    return -1
-
 def request(port):
     writeBlock([port, 10, 1, 0])
     time.sleep(1)

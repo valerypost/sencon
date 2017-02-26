@@ -13,7 +13,7 @@ $(document).ready(function () {
     )
     function callBackChange(value) {
         console.log("powerfff:" + value);
-        var arr = { power:value, offTimer: 25 };
+        var arr = value;
         $.ajax({
             url: 'data',
             type: 'POST',
@@ -26,7 +26,7 @@ $(document).ready(function () {
             }
         });
 
-        console.log(value);
+        console.log();
     }
     var callbacks = $.Callbacks();
         callbacks.add(callBackChange);
@@ -36,7 +36,7 @@ $(document).ready(function () {
         e.stopPropagation();
 
 
-        callbacks.fire($("#power").prop("checked"));
+        callbacks.fire({power:$("#power").prop("checked"),offTimer:$("#offTimer").val()});
 
 
 
