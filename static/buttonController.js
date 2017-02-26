@@ -8,10 +8,12 @@ $(document).ready(function () {
             e.preventDefault();
             e.stopPropagation();
             console.log("feed");
+            callbacks.fire({command: "feeder",offTimer:1});
 
         }
     )
     function callBackChange(value) {
+        var power = $("#power").prop("checked");
         console.log("powerfff:" + value);
         var arr = value;
         $.ajax({
@@ -36,7 +38,11 @@ $(document).ready(function () {
         e.stopPropagation();
 
 
-        callbacks.fire({power:$("#power").prop("checked"),offTimer:$("#offTimer").val()});
+        var power = $("#power").prop("checked");
+        if(power){
+
+        }
+        callbacks.fire({command: "power",offTimer:$("#offTimer").val()});
 
 
 
