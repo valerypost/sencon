@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import Flask, flash, redirect, render_template, request, session, abort,jsonify
 import os
-import busComunicationFake as comm
+import busComunication as comm
  
 app = Flask(__name__)
 
