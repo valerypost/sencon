@@ -46,3 +46,6 @@ def getPower():
 
 def setPower(time):
     writeBlock([7, 1, time, 1])
+
+def feed():
+    writePort4(10, 1, 10, 1)
