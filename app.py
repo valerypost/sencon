@@ -9,6 +9,10 @@ app = Flask(__name__)
 def test():
     return render_template('portal.html',power=comm.getPower())
 
+@app.route('/controls')
+def controls():
+    return render_template('controls.html',power=comm.getPower())
+
  # json data
 @app.route('/data', methods=['GET', 'POST'])
 def add_message():
